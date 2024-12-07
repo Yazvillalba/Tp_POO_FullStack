@@ -1,0 +1,33 @@
+Instrucciones para Jugar a los Dados
+Objetivo del Juego: El objetivo del juego es adivinar correctamente la suma de los valores de dos dados lanzados. Si aciertas, ganas el doble de tu apuesta. Si fallas, pierdes la cantidad apostada.
+
+Reglas del Juego:
+
+Apuesta Inicial:
+
+El monto mínimo para participar es de $50. Debes apostar al menos esta cantidad para jugar.
+Predicción:
+
+Antes de lanzar los dados, debes hacer una predicción indicando cuál crees que será la suma de los dos dados. Las posibles sumas van de 2 (doble 1) a 12 (doble 6).
+Lanzamiento de los Dados:
+
+Se lanzan dos dados de seis caras. Cada dado genera un número al azar entre 1 y 6.
+Resultados:
+
+Si la suma de los dos dados coincide con tu predicción:
+¡Ganaste! Recibes el doble del monto que apostaste.
+Si la suma no coincide con tu predicción:
+Pierdes la cantidad apostada.
+Ejemplo de Juego:
+
+Haces una apuesta de $100.
+Predices que la suma de los dados será 7.
+Se lanzan los dados y los resultados son:
+Dado 1: 3
+Dado 2: 4
+Suma: 7
+¡Acertaste! Ganaste $200.
+Notas Importantes:
+
+Este juego es de azar, por lo que los resultados son completamente aleatorios.
+Juega de manera responsable y diviértete.

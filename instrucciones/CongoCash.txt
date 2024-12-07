@@ -1,0 +1,31 @@
+Instrucciones del Juego: Congo Cash
+¡Bienvenido a Congo Cash! Este emocionante juego de tragamonedas combina estrategia, suerte y bonos especiales para maximizar tus ganancias. A continuación, encontrarás toda la información que necesitas para disfrutar de esta experiencia:
+
+Reglas Básicas:
+Nombre del Juego: Congo Cash
+Valor Mínimo de Apuesta: 10 créditos.
+Características Especiales: Tiradas Gratis y Bonos.
+Cómo Jugar:
+
+Realiza una apuesta igual o superior al valor mínimo permitido (10 créditos).
+Si no tienes suficientes créditos, el juego no permitirá comenzar a jugar.
+Resultados de la Tirada:
+
+En cada tirada, tu ganancia se calcula según un multiplicador aleatorio entre 1 y 5.
+La fórmula para la ganancia es:
+
+Ganancia = Apuesta x Multiplicador
+
+Tiradas Gratis:
+Si obtienes exactamente 300 créditos de ganancia en una tirada y no tienes tiradas gratis activas, ganas un bono de 5 tiradas gratis.
+Durante las tiradas gratis, no se descuenta ninguna apuesta de tus créditos.
+Bonos:
+
+Cada vez que actives un bono, recibirás tiradas adicionales que se ejecutan automáticamente.
+Las tiradas gratis se utilizan antes de continuar con las apuestas normales.
+Total Acumulado:
+
+Al final de cada ronda, el total acumulado incluye todas tus ganancias netas.
+Consejos Estratégicos:
+Apuesta estratégicamente para maximizar tus ganancias y aprovechar las tiradas gratis.
+Mantén un ojo en tu total acumulado y tus tiradas gratis restantes.
