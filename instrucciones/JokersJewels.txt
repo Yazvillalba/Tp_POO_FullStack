@@ -1,0 +1,16 @@
+¡Bienvenidos al juego Jokers Jewels!
+
+1. Ingresa el monto que deseas apostar (debe ser igual o superior al valor mínimo de apuesta: 20).
+
+2. El juego generará un número aleatorio que determinará el multiplicador de tu apuesta. 
+Tú ganancia será igual a la apuesta multiplicada por este número.
+
+3. Si ganas exactamente 300 en tu ganancia, activarás el Bono Especial.
+
+4. En el bono, debes elegir un color: rojo, verde o azul.
+
+Si aciertas el color, ganaras un premio extra.
+Sino aciertas el color, no recibirás el bono, pero seguirás jugando.
+
+
+¡Buena suerte y diviértete!

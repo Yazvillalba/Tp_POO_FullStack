@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Instrucciones del Juego: Congo Cash
 ¡Bienvenido a Congo Cash! Este emocionante juego de tragamonedas combina estrategia, suerte y bonos especiales para maximizar tus ganancias. A continuación, encontrarás toda la información que necesitas para disfrutar de esta experiencia:
 
@@ -29,3 +30,9 @@ Al final de cada ronda, el total acumulado incluye todas tus ganancias netas.
 Consejos Estratégicos:
 Apuesta estratégicamente para maximizar tus ganancias y aprovechar las tiradas gratis.
 Mantén un ojo en tu total acumulado y tus tiradas gratis restantes.
+=======
+Congo Cash:
+Apuesta mínimo 10.
+Ganas el doble si la suerte está de tu lado.
+
+>>>>>>> ca2c0d52319ee34684867e6839c3190a537752fc
