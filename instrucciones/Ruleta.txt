@@ -1,0 +1,42 @@
+Instrucciones para jugar a la Ruleta
+Objetivo del juego
+El objetivo es apostar al número y/o color que creas que saldrá ganador. Puedes ganar multiplicando tu apuesta dependiendo de tu elección y el resultado.
+
+
+Valor mínimo de apuesta: 100 unidades.
+Opciones de apuesta:
+Número: Puedes elegir cualquier número entre 1 y 36.
+Color: Las opciones de color son rojo o negro.
+
+Cómo jugar
+Elige tu apuesta: Decide la cantidad de unidades que deseas apostar. Siempre que sea igual o mayor a 100 unidades.
+
+Realiza tu elección:
+Ingresa un número del 1 al 36 y un color (rojo o negro) por separado.
+
+Ejemplo: 12 rojo o 25 negro.
+
+Resultado: Se seleccionará un número y un color ganadores al azar.
+
+Condiciones para ganar:
+Si aciertas el número y el color: Ganas entre 8x y 10x tu apuesta.
+
+Si aciertas solo el número: Ganas entre 4x y 6x tu apuesta.
+
+Si aciertas solo el color: Ganas entre 4x y 6x tu apuesta.
+
+Si no aciertas ninguna opción: Pierdes la cantidad apostada.
+
+Ejemplo de juego
+Apuestas 200 unidades a 15 rojo.
+La ruleta gira y el resultado es 15 rojo.
+¡Felicidades! Ganaste entre 1600 y 2000 unidades.
+La ruleta gira y el resultado es 8 rojo.
+Ganaste entre 800 y 1200 unidades por acertar solo el color.
+La ruleta gira y el resultado es 15 negro.
+Ganaste entre 800 y 1200 unidades por acertar solo el número.
+La ruleta gira y el resultado es 5 negro.
+No ganaste esta vez.
+
+
+Tu total acumulado de ganancias o pérdidas se actualiza después de cada partida. ¡Diviértete y juega con responsabilidad!
