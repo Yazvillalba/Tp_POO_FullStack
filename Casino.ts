@@ -1,77 +1,54 @@
-import { JokersJewels } from "./JokersJewels";
 import { CongoCash } from "./CongoCash";
-import { Ruleta } from "./Ruleta";
-import { Dados } from './Dados';
-
+import { JokersJewels } from "./JokerJewels";
+import { Juego } from "./Juego";
+import { Dados} from './Dados';
+import {Ruleta } from './Ruleta';
 export class Casino {
-    private tragamonedas: Array<JokersJewels | CongoCash>;
-    private ruleta: Ruleta;
-    private dados: Dados;
+    private juegos: Array<Juego>;
 
     constructor() {
-        this.tragamonedas = [
-            new JokersJewels(),
-            new CongoCash(),
-        ];
-        this.ruleta = new Ruleta();
-        this.dados = new Dados();
+        this.juegos = [];
+        this.agregarJuego(new CongoCash());
+        this.agregarJuego(new JokersJewels());
+        this.agregarJuego(new Ruleta());  
+
+        this.agregarJuego(new Dados());  
     }
 
+    agregarJuego(juego: Juego): void {
+        this.juegos.push(juego);
+    }
 
     mostrarJuegos(): void {
         console.log("--- JUEGOS DISPONIBLES ---");
-        this.tragamonedas.forEach((juego, index) => {
-            console.log(`${index + 1}. ${juego.getNombre()} (Tragamonedas)`);
+        this.juegos.forEach((juego, index) => {
+            console.log(`${index + 1}. ${juego.getNombre()}`);
         });
-        console.log(`${this.tragamonedas.length + 1}. ${this.ruleta.getNombre()} (Ruleta)`);
-        console.log(`${this.tragamonedas.length + 2}. ${this.dados.getNombre()} (Dados)`);
     }
 
     mostrarTragamonedas(): void {
-        console.log("---Tragamonedas Disponibles ---");
-        this.tragamonedas.forEach((juego, index) => {
-            console.log(`${index + 1}. ${juego.getNombre()} (Tragamonedas)`);
-        });
-    
+        console.log("--- TRAGAMONEDAS DISPONIBLES ---");
+        this.juegos
+            .filter(juego => juego instanceof JokersJewels || juego instanceof CongoCash)
+            .forEach((juego, index) => {
+                console.log(`${index + 1}. ${juego.getNombre()}`);
+            });
     }
-    elegirJuego(numJuego: number): JokersJewels | CongoCash | Ruleta | Dados | null {
-        if (numJuego <= this.tragamonedas.length) {
-            return this.tragamonedas[numJuego - 1];
-        } else if (numJuego === this.tragamonedas.length + 1) {
-            return this.ruleta;
-        } else if (numJuego === this.tragamonedas.length + 2) {
-            return this.dados;
+
+    elegirJuego(numJuego: number): Juego | null {
+        if (numJuego > 0 && numJuego <= this.juegos.length) {
+            return this.juegos[numJuego - 1];
         }
         console.log("Número de juego inválido.");
         return null;
     }
 
-    jugarJuego(juego: any, apuesta: number): void {
+    jugarJuego(juego: Juego, apuesta: number): void {
         if (apuesta <= 0 || isNaN(apuesta)) {
             console.log("La apuesta debe ser un número positivo.");
             return;
         }
 
-        if (juego instanceof Ruleta) {
-            this.jugarRuleta(juego, apuesta);
-        } else if (juego instanceof Dados) {
-            this.jugarDados(juego, apuesta);
-        } else {
-            this.jugarTragamonedas(juego, apuesta);
-        }
-    }
-    private jugarRuleta(ruleta: Ruleta, apuesta: number): void {
-        const readlineSync = require('readline-sync');
-        const eleccion = readlineSync.question("Elige un número (1-36) o un color (rojo/negro): ");
-        console.log(ruleta.jugar(apuesta, eleccion));
-    }
-
-    private jugarTragamonedas(tragamonedas: any, apuesta: number): void {
-        console.log(tragamonedas.jugar(apuesta));
-    }
-    private jugarDados(dados: Dados, apuesta: number): void {
-        const readlineSync = require("readline-sync");
-        const prediccion = readlineSync.question("Ingresa tu predicción de la suma de los dados (2-12): ");
-        console.log(dados.jugar(apuesta, prediccion));
+        console.log(juego.jugar(apuesta));
     }
 }
