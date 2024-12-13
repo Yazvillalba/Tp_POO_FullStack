@@ -1,4 +1,4 @@
 export interface InstruccionesJuego {
-    instruccionesPath: string;
+    readonly instruccionesPath: string;
     leerInstrucciones(): string;    
 }

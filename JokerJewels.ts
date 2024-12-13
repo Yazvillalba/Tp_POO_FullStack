@@ -1,11 +1,12 @@
 import { Tragamonedas } from "./Tragamonedas";
+import { Sesion } from "./Sesion";
 import * as fs from "fs";
 import * as readlineSync from "readline-sync";
 
 export class JokersJewels extends Tragamonedas {
   private totalGanado: number = 0;
 
-  constructor() {
+  constructor(private sesion Sesion) {
     super("Jokers Jewels", 20, "./instrucciones/JokersJewels.txt", "Elección de Color");
   }
 

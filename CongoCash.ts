@@ -45,11 +45,4 @@ export class CongoCash extends Tragamonedas {
     return "¡Ganaste 5 tiradas gratis!";
   }
 
-  leerInstrucciones(): string {
-    try {
-      return fs.readFileSync(this.instruccionesPath, "utf-8");
-    } catch {
-      return "No se pudieron cargar las instrucciones.";
-    }
-  }
 }

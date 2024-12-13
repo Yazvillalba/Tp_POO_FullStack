@@ -1,9 +1,10 @@
 import { Juego } from "./Juego";
+import { Sesion } from "./Sesion";
 
 export class Ruleta extends Juego {
     private totalGanado: number;
 
-    constructor() {
+    constructor(private sesion: Sesion) {
         super("Ruleta", 100, './instrucciones/Ruleta.txt');
         this.totalGanado = 0;
     }
@@ -52,7 +53,7 @@ export class Ruleta extends Juego {
         let ganancia = 0;
 
         if (numeroElegido === numeroGanador && colorElegido === colorGanador) {
-            ganancia = apuesta * (Math.floor(Math.random() * 3) + 8);
+            ganancia = (apuesta * 35) + (apuesta *2);
         } else if (numeroElegido === numeroGanador) {
             ganancia = apuesta * 35;
         } else if (colorElegido === colorGanador) {
@@ -61,10 +62,12 @@ export class Ruleta extends Juego {
 
         if (ganancia > 0) {
             this.totalGanado += ganancia - apuesta;
-            return `¡Felicidades! Ganaste ${ganancia}. Total acumulado: ${this.totalGanado}.`;
+            this.sesion.agregarSaldo(ganancia - apuesta);
+            return `¡Felicidades! Ganaste ${ganancia}. Total acumulado: ${this.sesion.getSaldoTotal()}.`;
         } else {
             this.totalGanado -= apuesta;
-            return `Lo siento, no ganaste esta vez. Total acumulado: ${this.totalGanado}.`;
+            this.sesion.descontarSaldo(apuesta);
+            return `Lo siento, no ganaste esta vez. Total acumulado: ${this.sesion.getSaldoTotal()}.`;
         }
     }
 }
