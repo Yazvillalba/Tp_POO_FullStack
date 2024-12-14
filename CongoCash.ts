@@ -1,11 +1,12 @@
 import { Tragamonedas } from "./Tragamonedas";
+import { Sesion } from "./Sesion";
 import * as fs from "fs";
 
 export class CongoCash extends Tragamonedas {
   private tiradasGratis: number = 0;
   private totalGanado: number = 0;
 
-  constructor() {
+  constructor(private sesion: Sesion) {
     super("Congo Cash", 10, "./instrucciones/CongoCash.txt", "Tiradas Gratis");
   }
 
@@ -33,10 +34,10 @@ export class CongoCash extends Tragamonedas {
     }
 
     console.log(
-      `Ganancia: ${ganancia}, Tiradas gratis restantes: ${this.tiradasGratis}, Total acumulado: ${this.totalGanado}`
+      `Ganancia: ${ganancia}, Tiradas gratis restantes: ${this.tiradasGratis}, Total acumulado: ${this.sesion.agregarSaldo(ganancia)}`
     );
 
-    return `Ganancia en esta jugada: ${ganancia}. Total acumulado: ${this.totalGanado}`;
+    return `Ganancia en esta jugada: ${ganancia}. Total acumulado en el juego: ${this.totalGanado}`;
   }
 
   aplicarBono(): string {

@@ -80,6 +80,8 @@ async function elegirJuego(): Promise<void> {
         choices: opcionesJuego,
     });
 
+
+
     switch (respuesta.opcion) {
         case "1":
             await jugarTragamonedas();
@@ -124,16 +126,21 @@ async function jugarTragamonedas(): Promise<void> {
         name: "apuesta",
         message: `Ingrese su apuesta (mínimo ${juego.getValorMinimoApuesta()}):`,
         validate: (input) => {
-            const apuestaNum = parseFloat(input);
-            if (isNaN(apuestaNum) || apuestaNum < juego.getValorMinimoApuesta()) {
-                return `La apuesta debe ser al menos ${juego.getValorMinimoApuesta()}.`;
+            const apuestaNum = Number(input);
+            if (
+                isNaN(apuestaNum) ||
+                !Number.isInteger(apuestaNum) || 
+                apuestaNum < juego.getValorMinimoApuesta() 
+            ) {
+                return `La apuesta debe ser al menos ${juego.getValorMinimoApuesta()}, y debe ser un número entero.`;
             }
             return true;
+        
         },
     });
 
     const resultado = casino.jugarJuego(juego, parseFloat(apuesta));
-    console.log(resultado);
+    
 
     const { opcionFinal } = await inquirer.prompt({
         type: "list",
@@ -191,7 +198,7 @@ async function jugarRuleta(): Promise<void> {
         validate: (input) => {
             const partes = input.trim().toLowerCase().split(" ");
             if (partes.length < 2) {
-                return "Por favor, ingresa un número y un color separados por un espacio.";
+                return "Por favor, ingresa un número de 0 a 37 y un color (rojo o negro) separados por un espacio.";
             }
             const numero = partes[0].replace(/[^0-9]/g, ''); 
             const color = partes[1];
@@ -242,8 +249,8 @@ async function jugarDados(): Promise<void> {
         name: "apuesta",
         message: `Ingrese su apuesta (mínimo ${juego.getValorMinimoApuesta()}):`,
         validate: (input) => {
-            const apuestaNum = parseFloat(input);
-            return (!isNaN(apuestaNum) && apuestaNum >= juego.getValorMinimoApuesta()) || `La apuesta debe ser al menos ${juego.getValorMinimoApuesta()}.`;
+            const apuestaNum = Number(input);
+            return (Number.isInteger(apuestaNum) && !isNaN(apuestaNum) && apuestaNum >= juego.getValorMinimoApuesta()) || `La apuesta debe ser al menos ${juego.getValorMinimoApuesta()}, y ser un numero entero`;
         },
     });
 
@@ -252,8 +259,8 @@ async function jugarDados(): Promise<void> {
         name: "prediccion",
         message: "Ingrese su predicción de la suma de los dos dados (de 2 a 12):",
         validate: (input) => {
-            const value = parseInt(input, 10);
-            return (!isNaN(value) && value >= 2 && value <= 12) || "La predicción debe estar entre 2 y 12.";
+            const value = Number(input);
+            return (Number.isInteger(value) && value >= 2 && value <= 12) || "La predicción debe estar entre 2 y 12, y ser un numero entero.";
         },
     });
 

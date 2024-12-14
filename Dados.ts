@@ -23,11 +23,16 @@ export class Dados extends Juego {
             ganancia = apuesta * 2;
             this.totalGanado += ganancia;
             this.sesion.agregarSaldo(ganancia);
-            return `¡Ganaste! Los dados salieron ${dado1} y ${dado2} (Suma: ${suma}). Ganaste ${ganancia}.`;
+            return `¡Ganaste! Los dados salieron ${dado1} y ${dado2} (Suma: ${suma}). Ganaste ${ganancia}.
+            Total Acumulado en el juego: ${this.totalGanado}
+            Total Acumulado: ${this.sesion.getSaldoTotal()}`;
         } else {
             this.totalGanado -= apuesta;
             this.sesion.descontarSaldo(apuesta);
-            return `Perdiste. Los dados salieron ${dado1} y ${dado2} (Suma: ${suma}).`;
+            return `Perdiste. Los dados salieron ${dado1} y ${dado2} (Suma: ${suma}).
+            Total Acumulado en el juego: ${this.totalGanado}
+            Total Acumulado: ${this.sesion.getSaldoTotal()}`;
+
         }
     }
 }

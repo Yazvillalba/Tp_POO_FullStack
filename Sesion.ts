@@ -1,5 +1,5 @@
 const bienvenida = 1000;
-class Sesion {
+export class Sesion {
     private saldoTotal: number;
     //tambien se podria usar la misma clase para chequear el jugador, etc
      
@@ -7,12 +7,14 @@ class Sesion {
       this.saldoTotal = bienvenida;
     }
   
-    agregarSaldo(valor: number): void {
+    agregarSaldo(valor: number): number {
       this.saldoTotal += valor;
+      return this.saldoTotal;
     }
   
-    descontarSaldo(valor: number): void {
+    descontarSaldo(valor: number): number {
       this.saldoTotal -= valor;
+      return this.saldoTotal;
     }
   
     getSaldoTotal(): number {

@@ -6,13 +6,13 @@ import {Ruleta } from './Ruleta';
 import {Sesion } from './Sesion';
 export class Casino {
     private juegos: Array<Juego>;
-    private sesion = Sesion;
+    private sesion : Sesion;
 
     constructor() {
         this.juegos = [];
         this.sesion=new Sesion();
-        this.agregarJuego(new CongoCash());
-        //this.agregarJuego(new JokersJewels());
+        this.agregarJuego(new CongoCash(this.sesion));
+        this.agregarJuego(new JokersJewels(this.sesion));
         this.agregarJuego(new Ruleta(this.sesion));  
 
         this.agregarJuego(new Dados(this.sesion));  

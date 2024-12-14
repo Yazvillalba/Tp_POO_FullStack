@@ -63,7 +63,7 @@ export class Ruleta extends Juego {
         if (ganancia > 0) {
             this.totalGanado += ganancia - apuesta;
             this.sesion.agregarSaldo(ganancia - apuesta);
-            return `¡Felicidades! Ganaste ${ganancia}. Total acumulado: ${this.sesion.getSaldoTotal()}.`;
+            return `¡Felicidades! Ganaste ${ganancia}. Total acumulado: ${this.sesion.agregarSaldo(ganancia)}.`;
         } else {
             this.totalGanado -= apuesta;
             this.sesion.descontarSaldo(apuesta);

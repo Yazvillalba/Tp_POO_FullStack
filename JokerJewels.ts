@@ -6,7 +6,7 @@ import * as readlineSync from "readline-sync";
 export class JokersJewels extends Tragamonedas {
   private totalGanado: number = 0;
 
-  constructor(private sesion Sesion) {
+  constructor(private sesion: Sesion) {
     super("Jokers Jewels", 20, "./instrucciones/JokersJewels.txt", "Elección de Color");
   }
 
@@ -19,14 +19,14 @@ export class JokersJewels extends Tragamonedas {
     const ganancia = apuesta * multiplicador;
     this.totalGanado += ganancia - apuesta;
 
-    console.log(`Resultado: Ganaste ${ganancia}. Total acumulado: ${this.totalGanado}.`);
+    console.log(`Resultado: Ganaste ${ganancia}. Total acumulado en el juego: ${this.totalGanado}.`);
 
     if (ganancia === 300) {
       console.log("¡Felicidades! Activaste el bono.");
       return this.aplicarBono();
     }
 
-    return `Resultado: Ganaste ${ganancia}. Total acumulado: ${this.totalGanado}`;
+    return `Resultado: Ganaste ${ganancia}. Total acumulado: ${this.sesion.agregarSaldo(ganancia)}`;
   }
 
   aplicarBono(): string {
@@ -37,10 +37,11 @@ export class JokersJewels extends Tragamonedas {
     if (colorElegido === colorAleatorio) {
       const bono = 300 * (Math.floor(Math.random() * 4) + 5);
       this.totalGanado += bono;
-      console.log(`¡Acertaste el color! Ganaste un bono de ${bono}. Total acumulado: ${this.totalGanado}`);
+      this.sesion.agregarSaldo(this.totalGanado);
+      console.log(`¡Acertaste el color! Ganaste un bono de ${bono}. Total acumulado: ${this.sesion.agregarSaldo(bono)}`);
       return "¡GANASTE EL BONO!";
     } else {
-      console.log(`No acertaste el color. Color correcto: ${colorAleatorio}. Total acumulado: ${this.totalGanado}`);
+      console.log(`No acertaste el color. Color correcto: ${colorAleatorio}. Total acumulado: ${this.sesion.getSaldoTotal()}`);
       return "No acertaste el bono.";
     }
   }
